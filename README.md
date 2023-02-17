@@ -6,9 +6,13 @@ Don't try to secure sensitive data with this program. This program was made to l
 
 BMPcrypt is a cryptographic algorithm based on AES-128 in PCBC mode. It uses the data from BPM images to encrypt and decrypt data in text files. There is also a second program to pseudo-randomly and deterministically generate such data, and save it as a BMP image using SDL2. The BMP image will act as a key for the encrpytion, once you encrypt or decrypt a file with the BMP image, the BMP image will be overwritten with 0's.
 
+
+
 <h3>How Key (BMP) Generation Works</h3>
 
 The <i>BMPkey</i> program will generate BMP images based off of user input and save the image to the disk. The user will be prompted to enter the width and height of the image, followed by a u16-bit integer that represents the number of extra pixels generated after the full image is computed. You will also be prompted to enter 4 different u64-bit values for seeds in the PRNG and 4 different u16-bit values for the iterations in the PRNG. These values will decide the RGB colors generated, as well as the location of the extra pixels. After this the user enters the file name and the image is generated on the SDL backbuffer column by column until it is complete. Once the image is generated, its rendered by SDL and saved to the same directory. If you were going to secure data with this program, it would obviously be important to keep these values secret. You can essentially think of this program as a glorified hashing algorithm.
+
+
 
 <h3>How Encryption Works</h3>
 
