@@ -1,8 +1,8 @@
 #include <iostream>
 #include <fstream>
 #include <cstring>
-#include "PRNG.h"
-#include "CMD_KEYGEN.h"
+#include "input.h"
+#include "prng.h"
 #include "aes_encode.h"
 #include "aes_decode.h"
 
